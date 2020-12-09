@@ -1,0 +1,105 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Component",
+"class": "CanMoveComponent",
+"language": "GDScript",
+"path": "res://components/CanMoveComponent.gd"
+}, {
+"base": "Node",
+"class": "Component",
+"language": "GDScript",
+"path": "res://gs_ecs/component.gd"
+}, {
+"base": "Node",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://gs_ecs/entity.gd"
+}, {
+"base": "System",
+"class": "FogOfWarSystem",
+"language": "GDScript",
+"path": "res://systems/FogOfWarSystem.gd"
+}, {
+"base": "Node",
+"class": "Group",
+"language": "GDScript",
+"path": "res://gs_ecs/group.gd"
+}, {
+"base": "Component",
+"class": "IsUnitComponent",
+"language": "GDScript",
+"path": "res://components/isUnitComponent.gd"
+}, {
+"base": "Entity",
+"class": "Pistol",
+"language": "GDScript",
+"path": "res://equipment/Pistol.gd"
+}, {
+"base": "Component",
+"class": "SelectableComponent",
+"language": "GDScript",
+"path": "res://components/SelectableComponent.gd"
+}, {
+"base": "System",
+"class": "ShootingSystem",
+"language": "GDScript",
+"path": "res://systems/ShootingSystem.gd"
+}, {
+"base": "Node",
+"class": "System",
+"language": "GDScript",
+"path": "res://gs_ecs/system.gd"
+}, {
+"base": "VBoxContainer",
+"class": "UnitSelectorButton",
+"language": "GDScript",
+"path": "res://gui/UnitSelectorButton.gd"
+} ]
+_global_script_class_icons={
+"CanMoveComponent": "",
+"Component": "",
+"Entity": "",
+"FogOfWarSystem": "",
+"Group": "",
+"IsUnitComponent": "",
+"Pistol": "",
+"SelectableComponent": "",
+"ShootingSystem": "",
+"System": "",
+"UnitSelectorButton": ""
+}
+
+[application]
+
+config/name="Shadowfire"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Logger="*res://Logger.gd"
+ECS="*res://gs_ecs/ecs.gd"
+Settings="*res://Settings.gd"
+Globals="*res://Globals.gd"
+
+[input]
+
+left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[rendering]
+
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"
